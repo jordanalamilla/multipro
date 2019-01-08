@@ -1,0 +1,342 @@
+/*
+Theme Name: Mutlipro
+Theme URI: https://jordanalamilla.ca
+Author: Jordan Alamilla
+Author URI: https://jordanalamilla.ca
+Description: A portfolio theme for mutlidisciplinary professionals.
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: university
+*/
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/*Eric Meyers CSS Reset*/
+
+/*Custom CSS*/
+
+/* ========== COMMON ========== */
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+    background-color: #FFF;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+h1, h3 a, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+i { font-size: 3em; }
+
+.red {
+    color: rgb(117, 61, 61);
+    background-color: rgb(243, 235, 235);
+    border: 1px solid rgb(186, 162, 162);
+}
+
+.red:hover {
+    color: rgb(81, 41, 41);
+    background-color: rgb(230, 204, 204);
+}
+
+.button {
+    color: #000;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1em 0;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+/* ========== LOGO ========== */
+
+#logo {
+    position: relative;
+    overflow: auto;
+    height: 100vh;
+}
+
+#logo img {
+    position: fixed;
+    width: 60px;
+    padding: 40px;
+}
+
+/* ========== NAVIGATION ========== */
+
+#mobile-nav-button {
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+#navbar {
+    display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+header {
+    text-align: left;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    padding-top: 10px;
+    font-weight: 400;
+}
+
+nav {
+    /* padding-top: 45px; */
+    display: block;
+    text-align: right;
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 400;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ========== SORT ========== */
+
+#sort {
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background-color: #EEE;
+    /* text-align: right; */
+}
+
+/* ========== CONTENT ========== */
+
+#content {
+    padding: 40px;
+}
+
+.post {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.3);
+}
+
+h3 a, h3 {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#posts {
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* POST TYPES */
+
+.web a, .art a {
+    color: #FFF;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    padding: 50% 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    line-height: 1.5;
+    opacity: 0;
+    transition: 100ms;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.web img, .art img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.blog {
+    /* display: none; */
+    padding: 60px;
+    line-height: 1.8;
+    background-color: #FFF;
+}
+
+.blog a {
+    color: #222;
+}
+
+.date {
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #EEE;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* ========== MOBILE ========== */
+
+/* @media only screen and ( max-width: 2000px ) {
+
+    #posts {
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
+
+@media only screen and ( max-width: 1800px ) {
+
+    #posts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 1440px ) {
+
+    nav {
+        padding-top: 43px;
+    }
+
+    #posts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 1400px ) {
+
+    .overlay {
+        opacity: 1;
+    }
+
+    #posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 1000px ) {
+
+    #posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ================================================ MOBILE ================================================ */
+
+@media only screen and ( max-width: 750px ) {
+
+    #mobile-nav-button {
+        display: block;
+    }
+
+    #navbar {
+        grid-template-columns: auto 50px;
+    }
+
+    #navbar {
+        position: relative;
+    }
+
+    nav {
+        /* display: none; */
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #FFF;
+        padding: 20px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        text-align: left;
+        z-index: 1;
+
+        -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+        display: block;
+        line-height: 3;
+    }
+
+    #sort {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    header {
+        padding-top: 20px;
+    }
+
+    #container {
+        grid-template-columns: 0 auto;
+    }
+
+    #logo img {
+        display: none;
+    }
+}
+
+@media only screen and ( max-width: 420px ) {
+
+    #content {
+        padding: 10px;
+    }
+
+    .blog {
+        padding: 40px;
+    }
+
+    footer a {
+        display: block;
+        text-align: left;
+        padding: 20px;
+        font-size: 1.2em;
+    }
+}
