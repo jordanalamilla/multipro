@@ -79,6 +79,7 @@ i { font-size: 3em; }
 #logo img {
     position: fixed;
     width: 60px;
+    height: auto;
     padding: 40px;
 }
 

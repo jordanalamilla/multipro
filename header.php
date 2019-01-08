@@ -17,7 +17,14 @@
 
         <!-- LOGO -->
         <section id="logo">
-            <img src="images/logo.png" alt="Site logo.">
+
+        <?php
+            if ( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+            }
+        ?>
+
+            <!-- <img src="images/logo.png" alt="Site logo."> -->
         </section>
 
         <section id="content">
