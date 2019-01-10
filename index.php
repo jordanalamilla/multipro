@@ -2,10 +2,16 @@
 
 <!-- SORT POST TYPES -->
 <section id="sort">
-    <a class="button" id="sort-web" data-type="web">Web</a>
+    <!-- <a class="button" id="sort-web" data-type="web">Web</a>
     <a class="button" id="sort-art" data-type="art">Art</a>
     <a class="button" id="sort-blog" data-type="blog">Blog</a>
-    <a class="button" id="sort-all" data-type="all">All</a>
+    <a class="button" id="sort-all" data-type="all">All</a> -->
+
+    <ul>
+        <?php wp_list_cats(); ?>
+        <li><a href="<?php bloginfo('url'); ?>">All</a></li>
+    </ul>
+
 </section>
 
 <!-- POSTS -->
@@ -54,7 +60,9 @@
                 </a>
 
                 <!-- IMAGE -->
-                <img src="images/collaborate.jpg" alt="post name">
+                <?php if ( has_post_thumbnail() ) {
+                    the_post_thumbnail();
+                } ?>
 
             <?php elseif( $category_class == 'art' ) : ?>
 

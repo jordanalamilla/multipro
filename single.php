@@ -2,13 +2,15 @@
 
 <?php while( have_posts() ) : the_post(); ?>
 
-    <!-- TITLE -->
-    <h1>
-        <?php the_title() ?>
-    </h1>
+    <section class="page">
 
-    <!-- CONTENT -->
-    <p><?php the_content() ?></p>
+        <!-- TITLE -->
+        <h3><?php the_title() ?></h3>
+
+        <!-- CONTENT -->
+        <?php the_content() ?>
+
+    </section>
 
 <?php endwhile; ?>
 

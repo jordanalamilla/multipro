@@ -34,16 +34,23 @@
 
                 <!-- HEADER -->
                 <header>
-                    <h1><?php bloginfo( 'name' ); ?></h1>
+                    <h1><a href="<?php bloginfo( 'url' ); ?>">
+                        <?php bloginfo( 'name' ); ?></a>
+                    </h1>
                     <h2><?php bloginfo( 'description' ); ?></h2>
                 </header>
 
                 <!-- NAV LINKS -->
                 <button id="mobile-nav-button"><i class="fas fa-bars"></i></button>
                 <nav>
-                    <a href="#">About</a>
+                    <!-- <a href="#">About</a>
                     <a href="#">Collaborate</a>
-                    <a href="#">Contact</a>
+                    <a href="#">Contact</a> -->
+
+                    <ul>
+                        <?php wp_list_pages([ 'title_li' => null ]); ?>
+                    </ul>
+
                 </nav>
 
             </section>
