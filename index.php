@@ -1,13 +1,10 @@
 <?php get_header(); ?>
 
-<!-- SORT POST TYPES -->
+<!-- CATEGORIES -->
 <section id="sort">
-    <!-- <a class="button" id="sort-web" data-type="web">Web</a>
-    <a class="button" id="sort-art" data-type="art">Art</a>
-    <a class="button" id="sort-blog" data-type="blog">Blog</a>
-    <a class="button" id="sort-all" data-type="all">All</a> -->
 
     <ul>
+        <!-- GET ALL CATEGORY LINKS -->
         <?php wp_list_cats(); ?>
         <li><a href="<?php bloginfo('url'); ?>">All</a></li>
     </ul>
@@ -17,19 +14,22 @@
 <!-- POSTS -->
 <section id="posts">
 
-    <?php while( have_posts() ) : the_post();
+    <?php
+        // POST LOOP
+        while( have_posts() ) : the_post();
 
-        $categories = get_the_category();
+        // GET THE POST CATEGORY FOR PROPER POST STYLING
+        $categories     = get_the_category();
         $category_class = 'none';
 
-        foreach( ( $categories ) as $category ) {
-
+        foreach( ( $categories ) as $category )
             $category_class = $category->cat_name;
-        }
     ?>
 
+        <!-- ASSIGN THE CATEGORY AS TARGETABLE CSS CLASS -->
         <section class="<?php echo $category_class; ?> post">
 
+            <!-- BLOG POST -->
             <?php if( $category_class == 'blog' ) : ?>
 
                 <!-- TITLE -->
@@ -49,6 +49,7 @@
                     <?php the_date(); ?>
                 </p>
 
+            <!-- WEB PORTFOLIO POST -->
             <?php elseif( $category_class == 'web' ) : ?>
 
                 <!-- OVERLAY -->
@@ -60,10 +61,9 @@
                 </a>
 
                 <!-- IMAGE -->
-                <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
-                } ?>
+                <?php if ( has_post_thumbnail() ) the_post_thumbnail(); ?>
 
+            <!-- ART PORTFOLIO POST -->
             <?php elseif( $category_class == 'art' ) : ?>
 
                 <!-- OVERLAY -->
@@ -75,9 +75,7 @@
                 </a>
 
                 <!-- IMAGE -->
-                <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
-                } ?>
+                <?php if( has_post_thumbnail() ) the_post_thumbnail(); ?>
 
             <?php endif; ?>
 

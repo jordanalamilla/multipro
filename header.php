@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jordan Alamilla</title>
+    <title><?php bloginfo( 'title' ); ?></title>
 
     <?php wp_head(); ?>
 
@@ -18,13 +19,10 @@
         <!-- LOGO -->
         <section id="logo">
 
-        <?php
-            if ( function_exists( 'the_custom_logo' ) ) {
-                the_custom_logo();
-            }
-        ?>
+            <?php // GET USERS WORDPRESS LOGO
+                if ( function_exists( 'the_custom_logo' ) )
+                    the_custom_logo(); ?>
 
-            <!-- <img src="images/logo.png" alt="Site logo."> -->
         </section>
 
         <section id="content">
@@ -32,24 +30,28 @@
             <!-- NAVIGATION -->
             <section id="navbar">
 
-                <!-- HEADER -->
+                <!-- SITE IDENTITY -->
                 <header>
-                    <h1><a href="<?php bloginfo( 'url' ); ?>">
-                        <?php bloginfo( 'name' ); ?></a>
+
+                    <h1>
+
+                        <!-- SITE TITLE -->
+                        <a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a>
+
+                        <!-- SITE TAGLINE -->
+                        <span><?php bloginfo( 'description' ); ?></span>
+
                     </h1>
-                    <h2><?php bloginfo( 'description' ); ?></h2>
+
                 </header>
 
-                <!-- NAV LINKS -->
+                <!-- MOBILE MENU ICON -->
                 <button id="mobile-nav-button"><i class="fas fa-bars"></i></button>
-                <nav>
-                    <!-- <a href="#">About</a>
-                    <a href="#">Collaborate</a>
-                    <a href="#">Contact</a> -->
 
-                    <ul>
-                        <?php wp_list_pages([ 'title_li' => null ]); ?>
-                    </ul>
+                <nav>
+
+                    <!-- WORDPRESS PAGES -->
+                    <ul><?php wp_list_pages( [ 'title_li' => null ] ); ?></ul>
 
                 </nav>
 
