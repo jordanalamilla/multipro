@@ -5,7 +5,11 @@
     <section class="page">
 
         <!-- TITLE -->
-        <h3><?php the_title() ?></h3>
+        <h1><?php the_title() ?></h1>
+
+        <p class="date">
+            <?php the_date(); ?>
+        </p>
 
         <!-- CONTENT -->
         <?php the_content() ?>

@@ -31,12 +31,20 @@ body {
     grid-template-columns: 150px auto;
 }
 
-h1, h3 a, h3 {
+h1, h2, h3 a, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
+    margin: 20px 0;
 }
 
-i { font-size: 3em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+
+i { font-size: 2em; }
 
 .red {
     color: rgb(117, 61, 61);
@@ -81,11 +89,6 @@ i { font-size: 3em; }
     width: 100px;
     height: auto;
     padding: 25px;
-    transition: 200ms;
-}
-
-#logo img:hover {
-    width: 95px;
 }
 
 /* ========== NAVIGATION ========== */
@@ -98,20 +101,26 @@ i { font-size: 3em; }
 
 #navbar {
     display: grid;
-	grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 20px;
 }
 
 header {
     text-align: left;
 }
 
-h1 a {
-    font-size: 2em;
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    font-size: 1em;
     text-decoration: none;
     color: #000;
 }
 
 h1 span {
+    font-size: 0.5em;
     padding-top: 10px;
     font-weight: 400;
     display: block;
@@ -142,7 +151,7 @@ nav a:hover {
 
 #sort {
     padding: 10px;
-    margin-top: 50px;
+    /* margin-top: 20px; */
     border-radius: 5px;
     background-color: #EEE;
     /* text-align: right; */
@@ -184,9 +193,9 @@ nav a:hover {
     box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.3);
 }
 
-h3 a, h3 {
+h2 a, h2 {
     text-decoration: none;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
 }
 
 #posts {
@@ -213,6 +222,11 @@ h3 a, h3 {
     line-height: 1.5;
     opacity: 0;
     transition: 100ms;
+}
+
+.overlay h2 {
+    font-size: 1.2em;
+    margin: 0;
 }
 
 .overlay:hover {
@@ -253,16 +267,18 @@ h3 a, h3 {
     height: auto !important;
 }
 
+.page img {
+    border-radius: 5px;
+}
+
 .page p {
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
     line-height: 1.8;
     margin-bottom: 20px;
-    /* max-width: 800px; */
+    max-width: 800px;
 }
 
 .page h3 {
-    /* font-size: 2em; */
-    /* font-weight: 300; */
     margin-bottom: 20px;
 }
 
@@ -280,6 +296,35 @@ blockquote p::before {
 
 blockquote p::after {
     content: '"';
+}
+
+blockquote {
+    font-family: serif;
+    padding: 20px;
+}
+
+pre {
+    margin: 30px 0;
+}
+
+code {
+    font-family: monospace;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #EEE;
+    color: #a55c5c;
+}
+
+.page ol, .page ul {
+    margin: 20px 0 20px 30px;
+    line-height: 1.8;
+}
+
+.page ol { list-style-type: decimal; }
+.page ul { list-style-type: disc; }
+
+.page li {
+    margin: 10px 0;
 }
 
 /* ========== FOOTER ========== */

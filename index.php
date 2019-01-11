@@ -33,11 +33,11 @@
             <?php if( $category_class == 'blog' ) : ?>
 
                 <!-- TITLE -->
-                <h3>
+                <h2>
                     <a href='<?php the_permalink() ?>'>
                         <?php the_title() ?>
                     </a>
-                </h3>
+                </h2>
 
                 <!-- CONTENT -->
                 <div class="post-content">
@@ -55,7 +55,7 @@
                 <!-- OVERLAY -->
                 <a href="<?php the_permalink() ?>">
                     <div class="overlay">
-                        <h3><?php the_title() ?></h3>
+                        <h2><?php the_title() ?></h2>
                         <p>Web</p>
                     </div>
                 </a>
@@ -69,7 +69,7 @@
                 <!-- OVERLAY -->
                 <a href="<?php the_permalink() ?>">
                     <div class="overlay">
-                        <h3><?php the_title() ?></h3>
+                        <h2><?php the_title() ?></h2>
                         <p>Art</p>
                     </div>
                 </a>
